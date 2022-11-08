@@ -1,15 +1,13 @@
-import express from 'express';
+class User {
+    private username: string;
+    constructor(username: string) {
+        this.username = username;
+    }
 
-const app = express();
+    sayHello() {
+        return `${this.username} says hi!`;
+    }
+}
 
-app.get('/', (req, res) => {
-    res.send('HELLO WORLD');
-});
-
-app.get('/about', (req, res) => {
-    res.send('ABOUT US');
-});
-
-app.listen(8080, () => {
-    console.log('Server is listening on port 8080')
-});
+const user = new User('Pesho');
+console.log(user.sayHello());
