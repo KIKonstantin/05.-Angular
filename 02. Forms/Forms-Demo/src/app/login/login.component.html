@@ -1,0 +1,39 @@
+<!-- <form #loginForm="ngForm" (ngSubmit)="handleFormSubmit(loginForm.value)">
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="text" name="email" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" type="password" ngModel name="password">
+    </div>
+    <button>LOGIN</button>
+</form> -->
+
+<article>
+    <form #formreg="ngForm" (ngSubmit)="handleFormSubmit(formreg.value)">
+        <div class="head">
+            <img src="../../favicon.ico" alt="my logo" />
+            <h2>Login form</h2>
+        </div>
+        <div class="labels">
+            <label for="Email">Email</label>
+            <input type="text" name="email" id="email" ngModel email />
+        </div>
+
+        <div class="labels">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" ngModel/>
+        </div>
+
+        <div class="labels">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" ngModel/>
+        </div>
+
+        <div class="buttons">
+            <button id="register-btn">login</button>
+        </div>
+    </form>
+</article>
+{{(formreg.value | json )}}
